@@ -1,0 +1,30 @@
+entry_dialog:
+  text: >
+    Here is some dialog text. There are three types of dialogs: plain text,
+    which is what this one is, multi-choice and text-box.
+  plain_text:
+    next_dialog: "multi_choice_dialog"
+
+multi_choice_dialog:
+  text: >
+    This dialog is the previously mentioned multi-choice type. The proceeding
+    dialog will depend on the option you choose.
+  multi_choice:
+    - text: "Go to next dialog."
+      next_dialog: "text_box_dialog"
+    - text: "back"
+      next_dialog: "entry_dialog"
+
+text_box_dialog:
+  text: >
+    And this dialog is the previously mentioned text-box dialog. The proceeding
+    dialog will depend on what you input. Type "next" to proceed or "back" to
+    go to the previous dialog.
+  text_box:
+    - text: "next"
+      next_dialog: "last_dialog"
+    - text: "back"
+      next_dialog: "multi_choice_dialog"
+
+last_dialog:
+  text: "Thanks for playing."

@@ -1,0 +1,48 @@
+entry_dialog:
+  text: "You find yourself in a strange room with two doors."
+  plain_text:
+    next_dialog: "note"
+
+note:
+  text: >
+    You approach the doors. You find a note. It says "one of the following
+    statements is false and the other is true. The next statement is false and
+    the left door is unlocked. Both statements are false and the right door is
+    unlocked."
+
+
+    Which door do you open?
+  multi_choice:
+    - text: "Open left door."
+      next_dialog: "exit_left_door"
+    - text: "Open right door."
+      next_dialog: "right_locked"
+    - text: "back"
+      next_dialog: "entry_dialog"
+
+right_locked:
+  text: "The door is locked."
+  plain_text:
+    next_dialog: "note"
+
+exit_left_door:
+  text: "The door opens and you walk through."
+  plain_text:
+    next_dialog: "prime_challenge"
+
+prime_challenge:
+  text: >
+    You are in another room with one more door. You walk up to it. It is
+    protected by a passcode. There is a note beside it. It reads "the passcode
+    is the 36th prime number."
+
+
+    Enter the passcode or type "back" to go back.
+  text_box:
+    - text: "151"
+      next_dialog: "last_dialog"
+    - text: "back"
+      next_dialog: "note"
+
+last_dialog:
+  text: "The door opens. You escape those mysterious rooms. Thanks for playing."
